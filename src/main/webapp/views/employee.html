@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="h1"><h2 class="alert alert-info">Employee List</h2></div>
+	<table  class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Salary</th>
+				<th>Operation</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="employee in employees">
+				<td>{{employee.firstName}}</td>
+				<td>{{employee.lastName}}</td>
+				<td>{{employee.salary}}</td>
+				<td><a ng-click="editEmployee(employee)" class="btn btn-warning">Edit</a> | <a ng-click="deleteEmployee(employee)" class="btn btn-danger">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div>
+		<div class="h1"><h2 class="alert alert-info">Add Employee</h2></div>
+		<form  ng-submit="addEmployee(newEmployee)">
+			<div class="form-group">
+				<input type="text" placeholder="Enter First Name" ng-model="newEmployee.firstName" class="form-control" id="email"/>
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Enter Last Name" ng-model="newEmployee.lastName" class="form-control" id="email"/>
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Enter Salary" ng-model="newEmployee.salary" class="form-control" id="email"/>
+			</div>
+			<input type="submit" value="Add | Edit Employee" class="btn btn-info"/>
+		</form>
+	</div>
+	
+</div>
+
+	
+
+
